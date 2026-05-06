@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suivi des contrats Wealins — Chamfeuil Capital</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h2 class="sr-only">Suivi des contrats Wealins — checklist de procédure par contrat et par investissement</h2>
+
+<div class="app">
+  <div class="header">
+    <div class="header-left">
+      <div class="header-title">
+        <i class="ti ti-file-text" aria-hidden="true" style="margin-right:6px;font-size:16px;vertical-align:-2px;"></i>
+        Suivi des contrats Wealins
+      </div>
+      <div class="header-sub">Chamfeuil Capital — validation procédures par contrat</div>
+    </div>
+    <span id="date-lbl" style="font-size:12px;color:#6b7280;"></span>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-lbl">Contrats</div><div class="stat-val" id="s-c">0</div></div>
+    <div class="stat"><div class="stat-lbl">Investissements</div><div class="stat-val" id="s-i">0</div></div>
+    <div class="stat"><div class="stat-lbl">Complétés</div><div class="stat-val g" id="s-d">0</div></div>
+    <div class="stat"><div class="stat-lbl">En cours</div><div class="stat-val a" id="s-p">0</div></div>
+  </div>
+
+  <div class="toolbar">
+    <input type="text" id="search" placeholder="Rechercher contrat ou client..." oninput="render()" />
+    <select id="fst" onchange="render()">
+      <option value="">Tous statuts</option>
+      <option value="done">Complétés</option>
+      <option value="in-progress">En cours</option>
+      <option value="new">Non démarrés</option>
+    </select>
+    <button class="btn-new-contrat" onclick="openContratModal()">
+      <i class="ti ti-plus" aria-hidden="true"></i>Nouveau contrat
+    </button>
+  </div>
+
+  <div id="list"></div>
+  <div id="modals"></div>
+</div>
+
+<!-- App script -->
+<script src="app.js"></script>
+
+</body>
+</html>
